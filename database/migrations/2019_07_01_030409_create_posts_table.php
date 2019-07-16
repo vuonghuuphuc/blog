@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->dateTime('published_at')->nullable();
             $table->bigInteger('views')->nullable();
             $table->bigInteger('user_id')->nullable();
+            $table->boolean('is_required_auth')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

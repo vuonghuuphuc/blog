@@ -25,7 +25,7 @@
                 </li>
                 <!-- Authentication Links -->
                 @guest
-                {{-- <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link text-white" href="{{ route('login') }}">
                         <i class="fa fa-sign-in-alt"></i>
                         {{ __('Login') }}
@@ -36,7 +36,7 @@
                         <i class="fa fa-user-plus"></i>
                         {{ __('Register') }}
                     </a>
-                </li> --}}
+                </li>
                 @else
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class=" text-light nav-link dropdown-toggle" href="#" role="button"
@@ -120,7 +120,7 @@
     @if (auth()->check())
         @if (!auth()->user()->email_verified_at)
         <div class="container mb-4">
-            <div class="card shadow-lg animated pulse">
+            <div class="card shadow-lg animated shake">
                 <div class="card-header">{{ __('Verify Your Email Address') }}</div>
 
                 <div class="card-body">

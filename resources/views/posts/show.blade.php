@@ -43,10 +43,23 @@
                     <div style="clear: both"></div>
                 </div>
 
-                <p class="card-text">{!! $post->body !!}</p>
+                @if(!$post->is_required_auth || ($post->is_required_auth && auth()->check()))
+
+                    @if(auth()->check() && !auth()->user()->email_verified_at)
+                        <div class="alert alert-dark animated shake" role="alert">
+                            {{ _('Please verify your E-Mail Address.') }}
+                        </div>
+                    @else
+                        <p class="card-text">{!! $post->body !!}</p>
+                    @endif
+                @else
+                    <div class="alert alert-dark animated shake" role="alert">
+                        {{ _('Please login to view content of this post.') }}
+                        <a target="_blank" href="{{ url('/login') }}">{{ __('Click here to login') }}</a>
+                    </div>
+                @endif
 
                 @include('includes.facebook_comment')
-                
             </div>
         </div>
     </div>

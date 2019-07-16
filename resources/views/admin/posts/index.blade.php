@@ -57,6 +57,17 @@ $(document).ready(function(){
                 }
             },
             { 
+                title: "{{ __('Required') }}",
+                data: 'is_required_auth',
+                filter: 'is_required_auth',
+                render: function ( data, type, row, meta ) {
+                    if(row.is_required_auth){
+                        return 'Logged In';
+                    }
+                    return '';
+                }
+            },
+            { 
                 title: "{{ __('Views') }}",
                 data: 'views',
                 filter: 'views',

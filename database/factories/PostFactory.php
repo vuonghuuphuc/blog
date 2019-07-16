@@ -29,5 +29,6 @@ $factory->define(Post::class, function (Faker $faker) {
         'views' => Arr::random([null, rand(1,100)]),
         'image_url' => $faker->imageUrl,
         'user_id' => \App\User::inRandomOrder()->first()->id,
+        'is_required_auth' => Arr::random([null, 1]),
     ];
 });

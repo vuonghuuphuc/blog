@@ -48,6 +48,14 @@
                 ])
             </div>
 
+            <div class="form-group">
+                @include('includes.checkbox', [
+                    'label' => __('Must login to view body'),
+                    'name' => 'is_required_auth',
+                    'checked' => !!$post->is_required_auth
+                ])
+            </div>
+
             @if (auth()->user()->can('publish', \App\Post::class))
             <div class="form-group">
                 @include('includes.checkbox', [

@@ -29,7 +29,7 @@ class UserPolicy
     }
 
     public function view(){
-        
+    
     }
 
     public function create(){
@@ -39,4 +39,5 @@ class UserPolicy
     public function update(){
         
     }
+    
 }

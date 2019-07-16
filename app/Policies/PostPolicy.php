@@ -22,6 +22,10 @@ class PostPolicy
 
     public function before(User $user)
     {
+        if(!$user->emaiL_verified_at){
+            return false;
+        }
+
         if(in_array($user->type, [
             'root',
             'admin',

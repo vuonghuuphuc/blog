@@ -77,7 +77,7 @@ class User extends Authenticatable implements MustVerifyEmail
             'admin',
             'publisher',
             'writer',
-        ]);
+        ]) && $this->email_verified_at;
     }
 
     public function posts(){

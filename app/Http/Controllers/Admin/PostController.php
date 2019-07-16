@@ -107,6 +107,7 @@ class PostController extends Controller
         $post->description = $request->input('description')?$request->input('description'):null;
         $post->body = $request->input('body')?$request->input('body'):null;
         $post->published_at = $request->input('published')?now():null;
+        $post->is_required_auth = $request->input('is_required_auth')?1:null;
         $post->admin_id = auth()->user()->id;
         $post->save();
 
@@ -161,7 +162,7 @@ class PostController extends Controller
         $post->title = $request->input('title');
         $post->description = $request->input('description')?$request->input('description'):null;
         $post->body = $request->input('body')?$request->input('body'):null;
-        
+        $post->is_required_auth = $request->input('is_required_auth')?1:null;
 
         if(auth()->user()->can('publish', $post)){
             if($post->published_at){
