@@ -22,7 +22,7 @@ class PostPolicy
 
     public function before(User $user)
     {
-        if(!$user->emaiL_verified_at){
+        if(!$user->email_verified_at){
             return false;
         }
 
